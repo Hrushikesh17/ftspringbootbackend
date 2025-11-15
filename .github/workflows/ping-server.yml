@@ -1,0 +1,12 @@
+name: Ping My Server Every 10 Minutes
+
+on:
+  schedule:
+    - cron: '*/10 * * * *'
+
+jobs:
+  ping-server:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send request to my server
+        run: curl -X GET https://ftspringbootbackend.onrender.com/admin/products
